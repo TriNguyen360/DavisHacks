@@ -555,4 +555,79 @@ body:not(.explore-page) .explore-container {
 
 /* ADD EVENT PAGE */
 
+.add-event-page {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* Remove the height if you don't want it to take the full viewport height */
+}
 
+.add-event-page h1 {
+    margin-bottom: 30px;
+}
+
+.add-event-page form {
+    width: 100%;
+    max-width: 400px; /* Adjust width as necessary */
+    margin: 0 auto; /* Center the form */
+    padding: 10px; /* Add some padding */
+    /* Rest of your styles for form */
+  }
+  
+
+.add-event-page form div {
+    margin-bottom: 15px; /* Spacing between form items */
+    width: 100%; /* Full width within the form */
+}
+
+.add-event-page form label,
+.add-event-page form input,
+.add-event-page form textarea,
+.add-event-page form select,
+.add-event-page form button {
+    width: 85%; /* Make all form inputs full width */
+    margin: 10px; /* Spacing for top and bottom */
+}
+
+.add-event-page form button {
+    padding: 10px 0; /* Padding for button */
+    margin-top: 20px; /* Extra space above the submit button */
+}
+
+.event-form-container {
+    background-color: #152238; /* This sets the background color to blue */
+    padding: 20px; /* This adds space inside the container */
+    margin: auto; /* This will help center the container */
+    width: 40%; /* Adjust the width as per your design requirement */
+    max-width: 1000px; /* Optional: Sets a maximum width */
+    border-radius: 10px; /* Optional: Rounds the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
+    color: white; /* Sets the text color to white for better readability */
+}
+
+/* If you want to keep the input fields and buttons styled differently, 
+   you can override the color within the form fields separately: */
+.event-form-container form input,
+.event-form-container form select,
+.event-form-container form textarea,
+.event-form-container form button {
+    background-color: #ffffff; /* Sets form fields background to white */
+    color: black; /* Sets text color inside form fields to black */
+    /* ...other styles for form elements... */
+}
+
+.add-event-page button[type='submit'] {
+    font-family: 'Inter', sans-serif;
+    background-color: #0056b3; /* Initial color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Change background color on hover */
+.add-event-page button[type='submit']:hover {
+    background-color: #003d7a; /* Darker shade for the hover state */
+}
