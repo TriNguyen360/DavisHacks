@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Volunteer Matching App - Intro Page</title>
+        <link rel="stylesheet" href="/static/styles.css">
+        <script src="/static/main.js"></script>
+    </head>
+<body>
+<!-- Registration Section -->
+<section id="signup-page">
+    <h2>Sign Up</h2>
+    <form action="/register" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="password" name="password" placeholder="Create a password" required>
+        <select name="interest">
+            <option value="" disabled selected>Select your interest</option>
+            <option value="Environment">Environment</option>
+            <option value="Education">Education</option>
+            <option value="Health">Health</option>
+            <!-- Add other options as needed -->
+        </select>
+        <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <button onclick="redirectToLogin()">Login here</button></p>
+</section>
+
+</body>
+</html>
