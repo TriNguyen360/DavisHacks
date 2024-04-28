@@ -459,17 +459,33 @@ nav ul li a {
     box-sizing: border-box;
 }
 
+.card-content {
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Adjust the left position as needed */
+    transform: translateY(-50%);
+    background-color: transparent; /* Adjust opacity as needed */
+    padding: 20px;
+    display: inline-block;
+    white-space: nowrap; /* Prevent line breaks */
+    color: white;
+    word-wrap: break-word;
+    max-width: 10%;
+}
+
 .card {
-    width: 100%; /* Make the card fill the width of its container */
+    width: 100%;
     max-width: 800px; 
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     background-color: white;
+    position: relative;
 }
 
 .card-img {
     width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -480,7 +496,7 @@ nav ul li a {
 
 .card-info p {
     margin: 5px 0;
-    color: grey;
+    word-wrap: break-word;
 }
 
 .explore-page-container {
