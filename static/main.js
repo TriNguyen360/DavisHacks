@@ -34,10 +34,8 @@ function showSignup() {
 let currentOpportunityIndex = 0;
 let opportunities = [];
 
-
-
 function renderOpportunityHtml(opportunity) {
-    let imagePath = opportunity.image ? `/static/${opportunity.image}` : '/static/default-image.png'; // Use a default image if none specified
+    let imagePath = '/static/environment.png';
     return `
         <div class="card">
             <img src="${imagePath}" alt="Event Picture" class="card-img">
@@ -160,13 +158,15 @@ function displayCurrentOpportunity() {
         const opportunity = opportunities[currentOpportunityIndex];
         console.log(`Displaying opportunity ${currentOpportunityIndex}: ${opportunity.organization_name}`);
         container.innerHTML = `
-            <div class="card">
-                <img src="/static/${opportunity.image || 'default-image.png'}" alt="Event Picture" class="card-img">
-                <h3>${opportunity.organization_name}</h3>
-                <p>${opportunity.description}</p>
-                <p><strong>Interest:</strong> ${opportunity.interest_field}</p>
-                <p><strong>Location:</strong> ${opportunity.location}</p>
-                <p><strong>Date:</strong> ${opportunity.date}</p>
+            <div class="card new-event">
+                <div class="card-content">
+                    <h3>${opportunity.organization_name}</h3>
+                    <p>${opportunity.description}</p>
+                    <p><strong>Interest:</strong> ${opportunity.interest_field}</p>
+                    <p><strong>Location:</strong> ${opportunity.location}</p>
+                    <p><strong>Date:</strong> ${opportunity.date}</p>
+                </div>
+                <img src="/static/environment.png" alt="Event Picture" class="card-img">
             </div>
         `;
         container.style.display = 'block'; // Make sure new content is visible
@@ -174,5 +174,7 @@ function displayCurrentOpportunity() {
         console.log('No more opportunities to display - Container update skipped.');
     }
 }
+
+
 
 
