@@ -11,7 +11,7 @@ body {
 
 .login {
     position: absolute;
-    top: 40%; 
+    top: 50%; 
     right: -100px;
     transform: translate(-50%, -50%); 
     text-align: center; 
@@ -48,19 +48,19 @@ body {
 .words {
     position: absolute;
     top: 50%;
-    left: 22%; /* Fixed left position */
+    left: 10%; 
     transform: translateY(-50%);
     text-align: center;
     color: black;
-    white-space: nowrap; /* Prevent line breaks */
+    white-space: nowrap; 
 }
 
 .word {
-    margin: 0 10px; /* Adjust the spacing between words */
-    font-size: 24px;
-    opacity: 0; /* Start with opacity 0 */
+    margin: 0 10px; 
+    font-size: 50px;
+    opacity: 0; 
     animation: fadeUp 1s forwards;
-    display: inline-block; /* Display words in line */
+    display: inline-block; 
 }
 
 @keyframes fadeUp {
