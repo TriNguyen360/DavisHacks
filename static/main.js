@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function animateEventOut(eventCard, animationName) {
         // Start the swipe out animation
-        eventCard.style.animation = `${animationName} 0.5s forwards`;
+        eventCard.style.animation = `${animationName} 0.75s forwards`;
 
         // Listen for the animation to be close to finishing
         eventCard.addEventListener('animationend', function() {

@@ -362,7 +362,7 @@ body:not(.explore-page) .explore-container {
 /* Animation for the event leaving like */
 @keyframes swipeRightUp {
     to {
-        transform: translateX(200%) translateY(-200%);
+        transform: translateX(130%) translateY(-150%) rotate(-30deg);
         opacity: 1;
     }
 }
@@ -370,7 +370,7 @@ body:not(.explore-page) .explore-container {
 /* Animation for the event leaving dislike */
 @keyframes swipeLeftUp {
     to {
-        transform: translateX(-200%) translateY(-200%);
+        transform: translateX(-130%) translateY(-150%) rotate(30deg);
         opacity: 1;
     }
 }
