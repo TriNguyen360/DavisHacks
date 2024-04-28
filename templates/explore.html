@@ -20,27 +20,20 @@
             </ul>
         </nav>
         <div class="user-actions">
-            <a href="/event"><img src="/static/plus.png"></a>
+            <a href="/event"><img src="/static/plus.png" alt="Add Event"></a>
             <a href="#">Profile</a>
         </div>
     </header>
-    <div class="explore-container explore-page">
-        {% for opportunity in opportunities %}
-            <div class="card">
-                <img src="/static/{{ opportunity.image }}" alt="Event Picture" class="card-img"> <!-- Assuming you have images stored and named by the opportunity -->
-                <h3>{{ opportunity.organization_name }}</h3>
-                <p>{{ opportunity.description }}</p>
-                <p><strong>Interest:</strong> {{ opportunity.interest_field }}</p>
-                <p><strong>Location:</strong> {{ opportunity.location }}</p>
-                <p><strong>Date:</strong> {{ opportunity.date }}</p>
-            </div>
-        {% else %}
-            <p>No matching opportunities found.</p>
-        {% endfor %}
+    <div id="opportunity-container" class="explore-container explore-page">
+        <!-- Dynamically loaded event will go here -->
     </div>
     <div class="action-buttons-container">
-        <button class="action-btn dislike"><img src="/static/dislike-icon.png" alt="Dislike"></button>
-        <button class="action-btn like"><img src="/static/like-icon.png" alt="Like"></button>
+        <button class="action-btn dislike" onclick="swipeEvent('dislike')"><img src="/static/dislike-icon.png" alt="Dislike"></button>
+        <button class="action-btn like" onclick="swipeEvent('like')"><img src="/static/like-icon.png" alt="Like"></button>
     </div>
+
+    <script>
+        // Placeholder for your dynamic event loading and handling code
+    </script>
 </body>
 </html>
