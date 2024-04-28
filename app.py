@@ -178,6 +178,18 @@ def add_event():
 
     return redirect(url_for('dashboard'))
 
+@app.route('/explore')
+@login_required
+def explore():
+    # Fetch user interests
+    user_interests = current_user.interests
+
+    # Fetch opportunities that match any of the user's interests
+    matched_opportunities = Opportunity.query.join(Interest, Opportunity.interest_field == Interest.name)\
+        .filter(Interest.id.in_([interest.id for interest in user_interests])).all()
+
+    return render_template('explore.html', opportunities=matched_opportunities)
+
 
 
 
