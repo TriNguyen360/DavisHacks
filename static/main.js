@@ -104,3 +104,66 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+let currentOpportunityIndex = 0;
+let opportunities = []; // This will be populated with data from the backend
+
+function loadOpportunities() {
+    fetch('/api/opportunities')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            opportunities = data;
+            console.log("Data received:", data);
+            if (opportunities.length > 0) {
+                displayCurrentOpportunity();
+            } else {
+                console.log("No opportunities available.");
+                document.getElementById('opportunity-container').innerHTML = '<p>No opportunities available.</p>';
+            }
+            if (opportunities.length > 0) {
+                displayCurrentOpportunity();
+            } else {
+                document.getElementById('opportunity-container').innerHTML = '<p>No opportunities available.</p>';
+            }
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+            document.getElementById('opportunity-container').innerHTML = '<p>Error loading opportunities.</p>';
+        });
+}
+
+
+function swipeEvent(action) {
+    console.log(`Action: ${action} on event: ${opportunities[currentOpportunityIndex].organization_name}`);
+    currentOpportunityIndex++;
+    displayCurrentOpportunity();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadOpportunities(); // Load opportunities when the document is ready
+});
+
+function displayCurrentOpportunity() {
+    if (currentOpportunityIndex < opportunities.length) {
+        const opportunity = opportunities[currentOpportunityIndex];
+        const container = document.querySelector('.explore-container.explore-page');
+        container.innerHTML = `
+            <div class="card">
+                <img src="/static/${opportunity.image}" alt="Event Picture" class="card-img">
+                <h3>${opportunity.organization_name}</h3>
+                <p>${opportunity.description}</p>
+                <p><strong>Interest:</strong> ${opportunity.interest_field}</p>
+                <p><strong>Location:</strong> ${opportunity.location}</p>
+                <p><strong>Date:</strong> ${opportunity.date}</p>
+            </div>
+        `;
+    } else {
+        document.getElementById('opportunity-container').innerHTML = '<p>No more opportunities.</p>';
+        console.log("No more opportunities to display.");
+    }
+}
+

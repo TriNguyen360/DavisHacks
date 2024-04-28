@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, url_for, render_template, flash
+from flask import Flask, request, redirect, url_for, render_template, flash, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -190,7 +190,24 @@ def explore():
 
     return render_template('explore.html', opportunities=matched_opportunities)
 
+@app.route('/api/opportunities')
+@login_required  # Ensure only logged-in users can access this
+def api_opportunities():
+    if not current_user.is_authenticated:
+        return jsonify({'error': 'User not authenticated'}), 401
 
+    user_interests = current_user.interests
+    matched_opportunities = Opportunity.query.join(Interest, Opportunity.interest_field == Interest.name)\
+        .filter(Interest.id.in_([interest.id for interest in user_interests])).all()
+
+    return jsonify([{
+        'image': 'path/to/image.png',  # Adjust according to your actual image handling
+        'organization_name': opp.organization_name,
+        'description': opp.description,
+        'interest_field': opp.interest_field,
+        'location': opp.location,
+        'date': opp.date
+    } for opp in matched_opportunities])
 
 
 if __name__ == '__main__':
