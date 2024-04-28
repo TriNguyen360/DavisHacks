@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
-
 body {
     margin: 0;
     padding: 0;
@@ -245,11 +244,11 @@ body {
     margin-bottom: -170px;
 }
 
-/* .logo {
+.logo {
     margin-top: 20px;
     max-width: 130px; 
     height: auto;
-}   */
+}  
 
 /* HOME PAGE */
 header {
