@@ -110,6 +110,66 @@ body {
 }
 
 /* SIGNUP PAGE */
+#signup-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: white; /* Light gray background similar to the screenshot */
+}
+
+#signup-page h2 {
+    margin: 0;
+    font-size: 24px; /* Large font size for the welcome message */
+    color: #333; /* Dark gray text */
+}
+
+#signup-page form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px; /* Max width of form */
+    margin-top: 20px;
+}
+
+#signup-page input[type='email'],
+#signup-page input[type='password'],
+#signup-page select {
+    height: 40px; /* Height of input fields */
+    margin-bottom: 10px; /* Space between the input fields */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px; /* Slightly rounded borders for the input fields */
+    font-size: 16px;
+}
+
+#signup-page button[type='submit'] {
+    height: 50px; /* Height of the submit button */
+    background-color: #3C46FF; /* Blue background color for the button */
+    color: white;
+    border: none;
+    border-radius: 6px; /* Slightly rounded borders for the button */
+    margin-top: 10px; /* Space above the submit button */
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#signup-page button[type='submit']:hover {
+    background-color: blue; 
+}
+
+#signup-page p {
+    font-size: 14px;
+    color: black; 
+    margin-top: 20px;
+}
+
+#signup-page a {
+    color: #0066ee; 
+    cursor: pointer;
+    text-decoration: none;
+}
 
 /* LOGIN PAGE */
 #login-page {
