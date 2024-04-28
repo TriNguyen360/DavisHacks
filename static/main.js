@@ -175,6 +175,6 @@ function displayCurrentOpportunity() {
     }
 }
 
-
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.hero-content').classList.add('animate');
+});
