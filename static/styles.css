@@ -97,7 +97,6 @@ body {
 }
 
 /* HOME PAGE */
-/* HOME PAGE */
 header {
     display: flex;
     justify-content: space-between;
@@ -116,19 +115,18 @@ header {
 .hero-section {
     position: relative;
     text-align: center; /* Center the text */
-  }
+}
   
-  .hero-background {
+.hero-background {
     width: 100%;
     height: auto;
     object-fit: cover;
     display: block;
     z-index: -1;
     transform: scaleX(-1); /* This flips the image horizontally */
-  }
+}
   
-  
-  .hero-section::after {
+.hero-section::after {
     content: '';
     position: absolute;
     top: 0;
