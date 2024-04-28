@@ -137,5 +137,49 @@ def page_not_found(e):
 def internal_server_error(e):
     return "Internal Server Error", 500  # Modified to return a simple error message
 
+@app.route('/event', methods=['GET'])
+@login_required
+def event():
+    interests = Interest.query.all()
+    return render_template('event.html', interests=interests)
+
+@app.route('/add-event', methods=['POST'])
+@login_required
+def add_event():
+    organization_name = request.form['organization_name']
+    description = request.form['description']
+    interest_id = request.form['interest']
+    location = request.form['location']
+    date = request.form['date']
+
+    # Debug print to trace the received data
+    print(f"Received data - Organization Name: {organization_name}, Description: {description}, Interest ID: {interest_id}, Location: {location}, Date: {date}")
+
+    # Create a new event instance
+    new_event = Opportunity(
+        organization_name=organization_name,
+        description=description,
+        interest_field=Interest.query.get(interest_id).name if Interest.query.get(interest_id) else 'Unknown',  # Ensure interest is found or set as 'Unknown'
+        location=location,
+        date=date,
+        creator_id=current_user.id  # Assuming the creator is the logged-in user
+    )
+
+    # Add the event to the session and commit to the database
+    db.session.add(new_event)
+    try:
+        db.session.commit()
+        print(f"Event added successfully: {new_event.organization_name} on {new_event.date}")
+        flash('Event successfully added!')
+    except Exception as e:
+        db.session.rollback()
+        print(f"Failed to add event: {str(e)}")
+        flash('Failed to add event, please try again.')
+
+    return redirect(url_for('dashboard'))
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
