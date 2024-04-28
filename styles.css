@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 body {
     margin: 0;
     padding: 0;
     height: 100vh;
     position: relative; 
     background-color: #FEE9D2;
+    font-family: 'Inter', sans-serif;
 }
 
-.content-wrapper {
+.login {
     position: absolute;
     top: 40%; 
     right: -100px;
@@ -21,12 +24,12 @@ body {
     top: 0;
     right: 0;
     height: 100%;
-    width: 40%; /* Adjusted width to cover the desired quarter */
+    width: 39em; /* Adjusted width to cover the desired quarter */
     background-color: black;
     z-index: -1; /* Ensure it's behind the content */
 }
 
-.content-wrapper button {
+.login button {
     content: flex;
     background-color: #3C46FF;
     color: white;
@@ -34,9 +37,12 @@ body {
     font-size: 18px;
     padding: 13px 70px;
     border: none;
+    margin-left: 10px;
 }
 
-.content-wrapper button:hover {
+.login button:hover {
     background-color: blue;
     cursor: pointer;
 }
+
+
