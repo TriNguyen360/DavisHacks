@@ -148,3 +148,32 @@ function displayCurrentOpportunity() {
         console.log('No more opportunities to display - Container update skipped.');
     }
 }
+
+let currentEventIndex = 0;
+let savedEvents = []; // This would be loaded from the server
+
+function displayEvent(index) {
+    const container = document.querySelector('.event-container');
+    if (index >= 0 && index < savedEvents.length) {
+        const event = savedEvents[index];
+        container.innerHTML = `<div>${event.name}</div><div>${event.date}</div>`;
+    }
+}
+
+document.getElementById('prev-event').addEventListener('click', () => {
+    if (currentEventIndex > 0) {
+        currentEventIndex--;
+        displayEvent(currentEventIndex);
+    }
+});
+
+document.getElementById('next-event').addEventListener('click', () => {
+    if (currentEventIndex < savedEvents.length - 1) {
+        currentEventIndex++;
+        displayEvent(currentEventIndex);
+    }
+});
+
+// Initially display the first event
+displayEvent(currentEventIndex);
+
