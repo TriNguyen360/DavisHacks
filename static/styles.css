@@ -109,6 +109,86 @@ body {
     font-size: 20px;
 }
 
+/* SIGNUP PAGE */
+
+/* LOGIN PAGE */
+#login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: white; /* Light gray background similar to the screenshot */
+}
+
+#login-page h2 {
+    margin: 0;
+    font-size: 24px; /* Large font size for the welcome message */
+    color: #333; /* Dark gray text */
+}
+
+#login-page form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px; /* Max width of form */
+    margin-top: 20px;
+}
+
+#login-page input[type='email'],
+#login-page input[type='password'] {
+    height: 40px; /* Height of input fields */
+    margin-bottom: 10px; /* Space between the input fields */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px; /* Slightly rounded borders for the input fields */
+    font-size: 16px;
+}
+
+#login-page button[type='submit'] {
+    height: 50px; /* Height of the submit button */
+    background-color: #3C46FF; /* Green background color for the button */
+    color: white;
+    border: none;
+    border-radius: 6px; /* Slightly rounded borders for the button */
+    margin-top: 10px; /* Space above the submit button */
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#login-page button[type='submit']:hover {
+    background-color: blue; 
+}
+
+#login-page p {
+    font-size: 14px;
+    color: black; 
+    margin-top: 20px;
+}
+
+#login-page button {
+    padding: 0;
+    background: none;
+    border: none;
+    color: #0066ee; 
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust the margin as needed */
+    margin-bottom: -170px;
+}
+
+.logo {
+    margin-top: 20px;
+    max-width: 130px; /* Adjust the size as needed */
+    height: auto;
+}
+
 /* HOME PAGE */
 header {
     display: flex;

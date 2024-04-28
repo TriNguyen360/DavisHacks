@@ -8,12 +8,15 @@
     <script src="/static/main.js"></script></head>
 <body>
     <!-- Login Section -->
+    <div class="logo-container">
+      <img src="/static/cow.png" alt="Icon" class="logo">
+    </div>
     <section id="login-page">
-        <h2>Login</h2>
+        <h2>Log In</h2>
         <form action="/login" method="POST">
-            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="email" name="email" placeholder="Enter your email address" required>
             <input type="password" name="password" placeholder="Enter your password" required>
-            <button type="submit">Login</button>
+            <button type="submit">Continue</button>
         </form>
         <p>Don't have an account? <button onclick="showSignup()">Sign up here</button></p>
     </section>
