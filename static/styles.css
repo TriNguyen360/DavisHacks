@@ -97,6 +97,7 @@ body {
 }
 
 /* HOME PAGE */
+/* HOME PAGE */
 header {
     display: flex;
     justify-content: space-between;
@@ -104,6 +105,111 @@ header {
     padding: 20px;
     background-color: transparent;
 }
+
+.website-title {
+    text-align: center; /* Centers the title text */
+    margin: 20px 0; /* Adds some space around the title */
+    font-size: 2rem; /* Increases the font size */
+    color: #333; /* Dark grey color for the text */
+}
+
+.hero-section {
+    position: relative;
+    text-align: center; /* Center the text */
+  }
+  
+  .hero-background {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    z-index: -1;
+    transform: scaleX(-1); /* This flips the image horizontally */
+  }
+  
+  
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1; /* Positioned above the image, below the text */
+}
+
+/* Style the text with high contrast for readability */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 15%; /* Adjust this to control the left-side placement */
+    transform: translateY(-50%);
+    color: #ffffff; /* Light text for contrast */
+    text-align: left;
+    z-index: 10; /* Ensure the text appears above the gradient overlay */
+    padding: 1em; /* Add some padding around the text */
+    width: 40%; /* Adjust width as needed */
+    max-width: 500px; /* Set a maximum width for larger displays */
+}
+
+/* Further style the headline and paragraph */
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}
+  
+  .description-section {
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-around; /* Spreads out the items */
+    margin-top: 20px; /* Adds space between hero section and this section */
+    padding: 20px; /* Adds padding inside the section */
+}
+
+.explore-button {
+    display: inline-block; /* Allows width and height to be set */
+    padding: 10px 20px; /* Size of the button */
+    font-size: 1rem; /* Text size within the button */
+    text-align: center; /* Center the text inside the button */
+    color: white; /* Text color */
+    background-color: #0056b3; /* Button background color, adjust as needed */
+    border: none; /* Remove the default border */
+    border-radius: 5px; /* Rounded corners for the button */
+    text-decoration: none; /* Remove the underline from the link */
+    cursor: pointer; /* Change mouse pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.explore-button:hover {
+    background-color: #003d7a; /* Darker shade on hover for interactivity */
+}
+
+.description-content {
+    flex-basis: 50%; /* Takes up half the space of the container */
+    display: flex; /* Enables flexbox layout within the description content */
+    flex-direction: column; /* Stacks flex items vertically */
+    justify-content: center; /* Centers flex items vertically */
+    align-items: center; /* Centers flex items horizontally */
+    padding-left: 20px; /* Adds some space between image and text */
+    text-align: center; /* Centers the text itself */
+}
+
+.description-image {
+    flex-basis: 50%; /* Takes up half the space of the container */
+}
+
+.description-image img {
+    width: 100%; /* Ensures image is responsive and fills the container */
+    height: auto; /* Keeps the image's aspect ratio */
+}
+  
 
 .logo img {
     height: 40px; /* Adjust as needed */
@@ -118,8 +224,10 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center the navigation items horizontally */
+    display: flex;
+    justify-content: center; /* Keep the items centered */
+    align-items: center;
+    padding-left: 150px; /* This will push the navigation items slightly to the right */
 }
 
 nav ul li {
@@ -139,6 +247,23 @@ nav ul li a {
     text-decoration: none;
     color: #333;
     margin-left: 30px;
+}
+
+/* EXPLORE PAGE */
+.block {
+    width: 300px; /* Adjust as needed */
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+
+.block p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
 }
 
 /* EXPLORE PAGE */
