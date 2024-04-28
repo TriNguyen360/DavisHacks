@@ -142,6 +142,15 @@ nav ul li a {
 }
 
 /* EXPLORE PAGE */
+.explore-page {
+    position: relative; /* Ensure the stacking context starts here */
+    width: 100%; /* Adjust width as necessary */
+    max-width: 800px; /* Set a maximum width for the cards */
+    margin: 0 auto; /* Center the card */
+    z-index: 2; /* Higher than the action buttons */
+    transition: transform 0.5s, opacity 0.5s; /* Transition for the animation */
+}
+
 .explore-container {
     display: flex;
     justify-content: center;
@@ -189,5 +198,58 @@ body:not(.explore-page) .explore-container {
     height: auto;
 }
 
+.action-buttons-container {
+    position: absolute;
+    bottom: 80px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 
+.action-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0 10px; /* Spacing between buttons */
+}
 
+.action-btn img {
+    width: 50px; /* Size of the button images */
+    height: auto;
+}
+
+/* Example hover effect for buttons */
+.action-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Animation for the old card leaving */
+@keyframes swipeRightUp {
+    to {
+        transform: translateX(100%) translateY(-50%);
+        opacity: 0;
+    }
+}
+
+@keyframes swipeLeftUp {
+    to {
+        transform: translateX(-100%) translateY(-50%);
+        opacity: 0;
+    }
+}
+
+/* Animation for the new card entering */
+@keyframes growIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.new-event {
+    animation: growIn 0.5s forwards;
+}
