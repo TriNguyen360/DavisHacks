@@ -245,7 +245,7 @@ body {
 }
 
 .logo {
-    margin-top: 20px;
+    margin-top: 0px;
     max-width: 130px; 
     height: auto;
 }  
@@ -385,7 +385,7 @@ header {
   
 
 .logo img {
-    height: 50px; /* Adjust as needed */
+    height: 60px;/* Adjust as needed */
 }
 
 nav {
@@ -400,7 +400,8 @@ nav ul {
     display: flex;
     justify-content: center; /* Keep the items centered */
     align-items: center;
-    padding-left: 150px; /* This will push the navigation items slightly to the right */
+    padding-left: 40px; /* This will push the navigation items slightly to the right */
+    font-size: 20px;
 }
 
 nav ul li {
@@ -408,7 +409,7 @@ nav ul li {
 }
 
 nav ul li:not(:last-child) {
-    margin-right: 50px; /* Add margin between navigation items */
+    margin-right: 70px; /* Add margin between navigation items */
 }
 
 nav ul li a {
@@ -416,10 +417,11 @@ nav ul li a {
     color: #333;
 }
 
-.user-actions a {
+.user-actions-profile a {
     text-decoration: none;
     color: #333;
-    margin-left: 30px;
+    margin-left: 40px;
+    font-size: 20px;
 }
 
 /* EXPLORE PAGE */
