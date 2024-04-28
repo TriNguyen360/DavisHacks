@@ -590,7 +590,6 @@ body:not(.explore-page) .explore-container {
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* Remove the height if you don't want it to take the full viewport height */
 }
 
 .add-event-page h1 {

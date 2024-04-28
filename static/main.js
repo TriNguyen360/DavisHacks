@@ -3,24 +3,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const words = document.querySelectorAll('.word');
     let index = 0;
 
-    if (words.length > 0) {
-        words.forEach((word, i) => {
-            word.style.display = (i === 0) ? 'block' : 'none';
-        });
+    function showWord() {
+        // Reset all words to not display
+        words.forEach(word => word.style.display = 'none');
 
-        function showWord() {
-            if (index > 0) {
-                words[index - 1].style.display = 'none';
-            }
-            words[index].style.display = 'block';
-            index = (index + 1) % words.length;
+        // Display the current word
+        words[index].style.display = 'block';
 
-            setTimeout(showWord, 2000);
-        }
+        // Calculate the next index
+        index = (index + 1) % words.length;
 
+        // Set a timeout to show the next word after 2 seconds
         setTimeout(showWord, 2000);
     }
+
+    // Start the first word display without delay
+    showWord();
 });
+
 
 function redirectToLogin() {
     window.location.href = "/login";
