@@ -142,5 +142,19 @@ nav ul li a {
 }
 
 /* EXPLORE PAGE */
+.block {
+    width: 300px; /* Adjust as needed */
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    display: inline-block;
+}
 
+
+.block p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
 
