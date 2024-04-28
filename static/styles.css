@@ -5,7 +5,7 @@ body {
     padding: 0;
     height: 100vh;
     position: relative; 
-    background-color: #FEE9D2;
+    background-color: white;
     font-family: 'Inter', sans-serif;
 }
 
@@ -143,12 +143,12 @@ nav ul li a {
 
 /* EXPLORE PAGE */
 .explore-page {
-    position: relative; /* Ensure the stacking context starts here */
-    width: 100%; /* Adjust width as necessary */
-    max-width: 800px; /* Set a maximum width for the cards */
-    margin: 0 auto; /* Center the card */
-    z-index: 2; /* Higher than the action buttons */
-    transition: transform 0.5s, opacity 0.5s; /* Transition for the animation */
+    position: relative; 
+    width: 100%; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    z-index: 2;
+    transition: transform 0.5s, opacity 0.5s; 
 }
 
 .explore-container {
@@ -163,7 +163,7 @@ nav ul li a {
 
 .card {
     width: 100%; /* Make the card fill the width of its container */
-    max-width: 800px; /* Set a maximum width if needed */
+    max-width: 800px; 
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -193,14 +193,13 @@ nav ul li a {
     width: 100vw; 
 }
 
-/* Add this to ensure only the Explore page content is centered */
 body:not(.explore-page) .explore-container {
     height: auto;
 }
 
 .action-buttons-container {
     position: absolute;
-    bottom: 80px; /* Adjust as needed */
+    bottom: 80px; 
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -212,31 +211,31 @@ body:not(.explore-page) .explore-container {
     border: none;
     background: none;
     cursor: pointer;
-    margin: 0 10px; /* Spacing between buttons */
+    margin: 0 10px; 
 }
 
 .action-btn img {
-    width: 50px; /* Size of the button images */
+    width: 50px; 
     height: auto;
 }
 
-/* Example hover effect for buttons */
 .action-btn:hover {
     transform: scale(1.1);
 }
 
-/* Animation for the old card leaving */
+/* Animation for the event leaving like */
 @keyframes swipeRightUp {
     to {
-        transform: translateX(100%) translateY(-50%);
-        opacity: 0;
+        transform: translateX(200%) translateY(-200%);
+        opacity: 1;
     }
 }
 
+/* Animation for the event leaving dislike */
 @keyframes swipeLeftUp {
     to {
-        transform: translateX(-100%) translateY(-50%);
-        opacity: 0;
+        transform: translateX(-200%) translateY(-200%);
+        opacity: 1;
     }
 }
 
