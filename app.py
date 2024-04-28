@@ -39,6 +39,8 @@ def seed_db():
 
 @app.route('/')
 def home():
+    if current_user.is_authenticated:
+        logout_user()
     return render_template('index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
