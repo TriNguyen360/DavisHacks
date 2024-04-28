@@ -52,16 +52,37 @@ function renderOpportunityHtml(opportunity) {
 document.addEventListener('DOMContentLoaded', function() {
     const likeButton = document.querySelector('.action-btn.like');
     const dislikeButton = document.querySelector('.action-btn.dislike');
+    let currentEvent = document.querySelector('.explore-container.explore-page'); // This should select the current visible event card.
 
-    // Attach event listener only once
+    // Function to handle the animation and swipe logic
+    function handleSwipe(action, animationName) {
+        currentEvent.style.animation = `${animationName} 0.75s forwards`;
+
+        currentEvent.addEventListener('animationend', () => {
+            // Reset the style and prepare for the next event
+            currentEvent.style.display = 'none'; // Hide the old card
+            currentEvent.style.animation = ''; // Clear the animation to reuse the card
+
+            // Increment and check to load the next opportunity if available
+            currentOpportunityIndex++;
+            if (currentOpportunityIndex < opportunities.length) {
+                displayCurrentOpportunity(); // Display the next opportunity
+                currentEvent.style.display = 'block'; // Ensure it's visible
+            } else {
+                document.querySelector('.explore-container.explore-page').innerHTML = '<p>No more opportunities.</p>';
+                console.log('Reached the end of opportunities.');
+            }
+        }, { once: true });
+    }
+
+    // Attach event listeners
     if (!likeButton.hasAttribute('data-event-bound')) {
         likeButton.setAttribute('data-event-bound', 'true');
         likeButton.addEventListener('click', (event) => {
             event.preventDefault();
             event.stopPropagation();
-            console.log('Button pressed: liked');
-            swipeEvent('liked');
-        }, { capture: true }); // Use capture phase for catching the event early
+            handleSwipe('liked', 'swipeRightUp');
+        }, { capture: true });
     }
 
     if (!dislikeButton.hasAttribute('data-event-bound')) {
@@ -69,9 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
         dislikeButton.addEventListener('click', (event) => {
             event.preventDefault();
             event.stopPropagation();
-            console.log('Button pressed: disliked');
-            swipeEvent('disliked');
-        }, { capture: true }); // Use capture phase for catching the event early
+            handleSwipe('disliked', 'swipeLeftUp');
+        }, { capture: true });
     }
 
     loadOpportunities(); // Load opportunities when the document is ready
@@ -109,7 +129,6 @@ function loadOpportunities() {
 }
 
 function displayCurrentOpportunity() {
-    console.log(`About to display opportunity at index ${currentOpportunityIndex}`);
     const container = document.querySelector('.explore-container.explore-page');
     if (currentOpportunityIndex < opportunities.length) {
         const opportunity = opportunities[currentOpportunityIndex];
@@ -124,6 +143,7 @@ function displayCurrentOpportunity() {
                 <p><strong>Date:</strong> ${opportunity.date}</p>
             </div>
         `;
+        container.style.display = 'block'; // Make sure new content is visible
     } else {
         console.log('No more opportunities to display - Container update skipped.');
     }
