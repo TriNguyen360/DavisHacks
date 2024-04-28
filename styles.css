@@ -74,12 +74,16 @@ body {
     }
 }
 
-@media screen and (max-width: 600px) {
-    .login, .words {
-        display: none; /* Hide login and words section on smaller screens */
-    }
+.top-icon {
+    position: absolute;
+    left: 20px; /* Adjust as needed */
+}
 
-    .background-right {
-        display: block; /* Show only background-right section */
-    }
+.top-icon {
+    top: 20px; /* Adjust as needed */
+}
+
+.top-icon img {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
 }
