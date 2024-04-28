@@ -96,6 +96,19 @@ body {
     font-size: 14px;
 }
 
+.header-top {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: flex-start; /* Align items to the start of the container */
+    padding-left: 20px; /* Or adjust as needed for spacing */
+}
+
+.name {
+    margin-top: 30px;
+    margin-left: 100px; /* Or adjust as needed for spacing */
+    font-size: 20px;
+}
+
 /* HOME PAGE */
 header {
     display: flex;
