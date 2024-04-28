@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteer Matching App - Profile Page</title>
+    <title>Volunteer Matching App - Liked Events</title>
     <link rel="stylesheet" href="/static/styles.css">
-    <script src="/static/main.js"></script>
 </head>
 <body>
     <header>
@@ -16,29 +15,34 @@
             <ul>
                 <li><a href="/dashboard">Home</a></li>
                 <li><a href="/explore">Explore</a></li>
-                <li><a href="/search">Search</a></li>
+                <li><a href="#">Search</a></li>
             </ul>
         </nav>
         <div class="user-actions">
-            <a href="/event"><img src="/static/plus.png" alt="Add Event"></a>
-            <a href="/profile">Profile</a>
+            <ul>
+                <li><a href="/event"><img src="/static/plus.png" alt="Add Event"></a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
         </div>
     </header>
-    <section id="saved-events">
+
+    <div class="saved-events">
         <h2>Saved Events</h2>
         <div class="event-container">
-            <!-- Events will be dynamically inserted here -->
+            {% for event in liked_events %}
+            <div class="event-box">
+                <h3>{{ event.organization_name }}</h3>
+                <p>{{ event.description }}</p>
+                <p><strong>Interest:</strong> {{ event.interest_field }}</p>
+                <p><strong>Location:</strong> {{ event.location }}</p>
+                <p><strong>Date:</strong> {{ event.date }}</p>
+            </div>
+            {% endfor %}
         </div>
-        <button id="prev-event">Previous</button>
-        <button id="next-event">Next</button>
-    </section>
-    <section id="interests">
-        <h2>Manage Interests</h2>
-        <form>
-            <!-- Dynamically generate checkboxes or other input types for interests -->
-        </form>
-        <button onclick="updateInterests()">Update Interests</button>
-    </section>
-    <script src="/static/profile.js"></script>
+    </div>
+
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
 </body>
 </html>
