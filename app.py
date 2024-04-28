@@ -128,6 +128,11 @@ def logout():
 def dashboard():
     return render_template('home.html')
 
+@app.route('/profile')
+@login_required
+def profile():
+    return render_template('profile.html')
+
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -209,6 +214,24 @@ def api_opportunities():
         'date': opp.date
     } for opp in matched_opportunities])
 
+@app.route('/liked_events')
+@login_required
+def liked_events():
+    liked_events = current_user.liked_events
+    return render_template('liked_events.html', liked_events=liked_events)
+
+@app.route('/save_liked_event', methods=['POST'])
+@login_required
+def save_liked_event():
+    data = request.get_json()
+    event_id = data.get('event_id')
+    if event_id:
+        liked_event = LikedEvent(user_id=current_user.id, opportunity_id=event_id)
+        db.session.add(liked_event)
+        db.session.commit()
+        return jsonify({'message': 'Liked event saved successfully'}), 200
+    else:
+        return jsonify({'error': 'Event ID not provided'}), 400
 
 if __name__ == '__main__':
     app.run(debug=True)

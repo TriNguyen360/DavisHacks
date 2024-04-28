@@ -26,6 +26,7 @@ function redirectToLogin() {
     window.location.href = "/login";
 }
 
+
 function showSignup() {
     window.location.href = "/register";
 }
@@ -111,6 +112,31 @@ function swipeEvent(action) {
     } else {
         displayCurrentOpportunity();
     }
+
+    if (action === 'liked') {
+        const likedEventId = opportunities[currentOpportunityIndex].id;
+        saveLikedEvent(likedEventId);
+    }
+}
+
+function saveLikedEvent(eventId) {
+    fetch('/save_liked_event', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCSRFToken(), // Get CSRF token if using Flask-WTF
+        },
+        body: JSON.stringify({ event_id: eventId })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to save liked event');
+        }
+        console.log('Event saved successfully');
+    })
+    .catch(error => {
+        console.error('Error saving liked event:', error);
+    });
 }
 
 function loadOpportunities() {
