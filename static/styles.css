@@ -115,42 +115,42 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
-    background-color: white; /* Light gray background similar to the screenshot */
+    height: 100vh; 
+    background-color: white; 
 }
 
 #signup-page h2 {
     margin: 0;
-    font-size: 24px; /* Large font size for the welcome message */
-    color: #333; /* Dark gray text */
+    font-size: 24px; 
+    color: #333; 
 }
 
 #signup-page form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 320px; /* Max width of form */
+    max-width: 320px;
     margin-top: 20px;
 }
 
 #signup-page input[type='email'],
 #signup-page input[type='password'],
 #signup-page select {
-    height: 40px; /* Height of input fields */
-    margin-bottom: 10px; /* Space between the input fields */
+    height: 40px; 
+    margin-bottom: 10px; 
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 6px; /* Slightly rounded borders for the input fields */
+    border-radius: 6px; 
     font-size: 16px;
 }
 
 #signup-page button[type='submit'] {
-    height: 50px; /* Height of the submit button */
-    background-color: #3C46FF; /* Blue background color for the button */
+    height: 50px; 
+    background-color: #3C46FF; 
     color: white;
     border: none;
-    border-radius: 6px; /* Slightly rounded borders for the button */
-    margin-top: 10px; /* Space above the submit button */
+    border-radius: 6px; 
+    margin-top: 10px; 
     font-size: 16px;
     cursor: pointer;
 }
@@ -177,41 +177,41 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
-    background-color: white; /* Light gray background similar to the screenshot */
+    height: 100vh; 
+    background-color: white; 
 }
 
 #login-page h2 {
     margin: 0;
-    font-size: 24px; /* Large font size for the welcome message */
-    color: #333; /* Dark gray text */
+    font-size: 24px; 
+    color: #333;
 }
 
 #login-page form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 320px; /* Max width of form */
+    max-width: 320px;
     margin-top: 20px;
 }
 
 #login-page input[type='email'],
 #login-page input[type='password'] {
-    height: 40px; /* Height of input fields */
-    margin-bottom: 10px; /* Space between the input fields */
+    height: 40px;
+    margin-bottom: 10px; 
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 6px; /* Slightly rounded borders for the input fields */
+    border-radius: 6px; 
     font-size: 16px;
 }
 
 #login-page button[type='submit'] {
-    height: 50px; /* Height of the submit button */
-    background-color: #3C46FF; /* Green background color for the button */
+    height: 50px; 
+    background-color: #3C46FF; 
     color: white;
     border: none;
-    border-radius: 6px; /* Slightly rounded borders for the button */
-    margin-top: 10px; /* Space above the submit button */
+    border-radius: 6px; 
+    margin-top: 10px; 
     font-size: 16px;
     cursor: pointer;
 }
