@@ -98,9 +98,9 @@ body {
 
 .header-top {
     display: flex;
-    align-items: center; /* Align items vertically in the center */
-    justify-content: flex-start; /* Align items to the start of the container */
-    padding-left: 20px; /* Or adjust as needed for spacing */
+    align-items: center; 
+    justify-content: flex-start; 
+    padding-left: 20px; 
 }
 
 .name {
