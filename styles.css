@@ -24,9 +24,9 @@ body {
     top: 0;
     right: 0;
     height: 100%;
-    width: 39em; /* Adjusted width to cover the desired quarter */
+    width: 39em; 
     background-color: black;
-    z-index: -1; /* Ensure it's behind the content */
+    z-index: -1;
 }
 
 .login button {
@@ -43,6 +43,35 @@ body {
 .login button:hover {
     background-color: blue;
     cursor: pointer;
+}
+
+.words {
+    position: absolute;
+    top: 50%;
+    left: 22%; /* Fixed left position */
+    transform: translateY(-50%);
+    text-align: center;
+    color: black;
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+.word {
+    margin: 0 10px; /* Adjust the spacing between words */
+    font-size: 24px;
+    opacity: 0; /* Start with opacity 0 */
+    animation: fadeUp 1s forwards;
+    display: inline-block; /* Display words in line */
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
