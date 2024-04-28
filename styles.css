@@ -74,4 +74,12 @@ body {
     }
 }
 
+@media screen and (max-width: 600px) {
+    .login, .words {
+        display: none; /* Hide login and words section on smaller screens */
+    }
 
+    .background-right {
+        display: block; /* Show only background-right section */
+    }
+}
