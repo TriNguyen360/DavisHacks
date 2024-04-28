@@ -7,36 +7,74 @@
     <link rel="stylesheet" href="/static/styles.css">
     <script src="/static/main.js"></script>
 </head>
+<header>
+    <div class="logo">
+        <img src="/static/cow.png" alt="Icon">
+    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* CSS to position the title at the top left */
+            #title {
+                position: absolute;
+                top: 10px; /* Adjust as needed */
+                left: 85px; /* Adjust as needed */
+                font-size: 35px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="title">AggieCollab</h1>
+        <!-- Other content of your webpage goes here -->
+    </body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="/explore">Explore</a></li>
+            <li><a href="#">Host</a></li>
+        </ul>
+    </nav>
+    <div class = "user-actions-inbox">
+        <a href="/event"><img src="/static/inbox.png" alt="Add Event"></a>
+    </div>
+    <div class="user-actions-profile">
+        <a href="#">Profile</a>
+    </div>
+</header>
+
 <body class="add-event-page">
-    <h1>Add New Event</h1>
-    <form action="/add-event" method="post">
-        <div>
-            <label for="organization_name">Organization Name:</label>
-            <input type="text" id="organization_name" name="organization_name" required>
-        </div>
-        <div>
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" required></textarea>
-        </div>
-        <div>
-            <label for="interest">Interest Field:</label>
-            <select id="interest" name="interest" required>
-                <option value="">Select Interest</option>
-                {% for interest in interests %}
-                <option value="{{ interest.id }}">{{ interest.name }}</option>
-                {% endfor %}
-            </select>
-            
-        </div>
-        <div>
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" required>
-        </div>
-        <div>
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
-        </div>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="event-form-container">
+        <h1>Add New Event</h1>
+        <form action="/add-event" method="post">
+            <div>
+                <label for="organization_name">Organization Name:</label>
+                <input type="text" id="organization_name" name="organization_name" required>
+            </div>
+            <div>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+            <div>
+                <label for="interest">Interest Field:</label>
+                <select id="interest" name="interest" required>
+                    <option value="">Select Interest</option>
+                    {% for interest in interests %}
+                    <option value="{{ interest.id }}">{{ interest.name }}</option>
+                    {% endfor %}
+                </select>
+                
+            </div>
+            <div>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
