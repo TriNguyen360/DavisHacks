@@ -301,7 +301,7 @@ header {
 .hero-content {
     position: absolute;
     top: 50%;
-    left: 15%; /* Adjust this to control the left-side placement */
+    left: 15%; /* Adjust this to control the left-side placement! */
     transform: translateY(-50%);
     color: #ffffff; /* Light text for contrast */
     text-align: left;
