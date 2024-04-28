@@ -618,6 +618,8 @@ body:not(.explore-page) .explore-container {
 .add-event-page form button {
     width: 85%; /* Make all form inputs full width */
     margin: 10px; /* Spacing for top and bottom */
+    border-radius: 3px;
+    border: none;
 }
 
 .add-event-page form button {
@@ -626,15 +628,20 @@ body:not(.explore-page) .explore-container {
 }
 
 .event-form-container {
-    background-color: #152238; /* This sets the background color to blue */
+    background-color: #312d2d; /* This sets the background color to blue */
     padding: 20px; /* This adds space inside the container */
     margin: auto; /* This will help center the container */
     width: 40%; /* Adjust the width as per your design requirement */
     max-width: 1000px; /* Optional: Sets a maximum width */
-    border-radius: 10px; /* Optional: Rounds the corners */
+    border-radius: 16px; /* Optional: Rounds the corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
     color: white; /* Sets the text color to white for better readability */
 }
+
+.event-form-container.animate {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
 
 /* If you want to keep the input fields and buttons styled differently, 
    you can override the color within the form fields separately: */
