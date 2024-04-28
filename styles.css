@@ -48,7 +48,7 @@ body {
 .words {
     position: absolute;
     top: 50%;
-    left: 10%; 
+    left: 5%; 
     transform: translateY(-50%);
     text-align: center;
     color: black;
