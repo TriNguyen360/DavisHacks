@@ -1,6 +1,6 @@
 from flask import Flask, request, redirect, url_for, render_template, flash
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user, UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import db, User, Opportunity, Interest
 import os
@@ -19,10 +19,6 @@ login_manager.login_view = 'login'
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-@app.route('/')
-def home():
-    return render_template('home.html')
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -38,6 +34,7 @@ def login():
             return redirect(url_for('dashboard'))
         else:
             flash('Invalid email or password')
+            return redirect(url_for('login'))
     
     return render_template('login.html')
 
@@ -49,10 +46,11 @@ def register():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        interest_id = request.form.get('interest')
+        interest_id = request.form['interest']
         
         if User.query.filter_by(email=email).first():
             flash('Email already exists!')
+            return redirect(url_for('register'))
         else:
             hashed_password = generate_password_hash(password)
             new_user = User(email=email, password=hashed_password)
