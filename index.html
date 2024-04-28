@@ -71,31 +71,6 @@
         </form>
         <p>Already have an account? <button onclick="showLogin()">Login here</button></p>
     </section>
-
-    <!-- Home Page Section (Visible after successful login) -->
-    <section id="home-page" style="display:none;">
-        <header>
-            <button onclick="showHome()">Home</button>
-            <button onclick="showExplore()">Explore</button>
-            <button onclick="showSearch()">Search</button>
-            <button onclick="showAddEvent()">Add Event</button>
-            <button onclick="showProfile()">Profile</button>
-        </header>
-    </section>
-
-    <script>
-        function showLogin() {
-            document.getElementById('intro-page').style.display = 'none';
-            document.getElementById('signup-page').style.display = 'none';
-            document.getElementById('login-page').style.display = 'block';
-        }
-
-        function showSignup() {
-            document.getElementById('intro-page').style.display = 'none';
-            document.getElementById('login-page').style.display = 'none';
-            document.getElementById('signup-page').style.display = 'block';
-        }
-    </script>
 </body>
 <footer>
 

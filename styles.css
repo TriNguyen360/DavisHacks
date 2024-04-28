@@ -9,6 +9,7 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+/* INTRO PAGE */
 .login {
     position: absolute;
     top: 50%; 
@@ -95,3 +96,39 @@ body {
     font-size: 14px;
 }
 
+/* HOME PAGE */
+header {
+    background-color: transparent;   /* Dark background color for the header */
+    color: white; /* Text color for the header */
+    padding: 10px; /* Padding to add some space around the navigation */
+}
+
+nav {
+    display: flex; /* Flex layout for the navigation */
+    justify-content: space-between; /* Items will be distributed evenly on the horizontal axis */
+}
+
+.left-nav ul,
+.right-nav ul {
+    list-style-type: none; /* Remove default list styles */
+    margin: 20px; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.left-nav ul li,
+.right-nav ul li {
+    display: inline; /* Display list items horizontally */
+    margin-right: 20px; /* Add some space between list items */
+    font-size: 25px;
+}
+
+.left-nav ul li a,
+.right-nav ul li a {
+    color: black; /* Text color for navigation links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.left-nav ul li a:hover,
+.right-nav ul li a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
